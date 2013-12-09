@@ -1,41 +1,44 @@
 <html ng-app="piaApp">
 <head>
-	<title>Demo</title>
-	<script type="text/javascript" src="lib/angular/angular.min.js"></script>
-	<script type="text/javascript" src="lib/angular/angular-resource.min.js"></script>
-	<script type="text/javascript" src="lib/angular/angular-route.js"></script>
+	<title>Priscilla</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.js"></script>
 	<script type="text/javascript" src="js/controllers/app.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/services.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.min.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
 </head>
-<body>
-	<div class="container" ng-controller="AppController">
-    <div>
-      <ul class="nav nav-pills">
-        <li ng-class="homeActive">
-          <a href="#">Demos</a>
-        </li>
-        <li ng-class="experienceActive">
-          <a href="#/experience">Experience</a>
-        </li>
-        <li ng-class="educationActive">
-          <a href="#/education">Education</a>
-        </li>
-      </ul>
+  <body>
+    <div class="container" ng-controller="AppController">
+      <header class="row">
+        <div> <!-- contains nav pills -->
+          <ul class="nav nav-pills">
+            <li ng-class="homeActive">
+              <a href="#">Demos</a>
+            </li>
+            <li ng-class="experienceActive">
+              <a href="#/experience">Experience</a>
+            </li>
+            <li ng-class="educationActive">
+              <a href="#/education">Education</a>
+            </li>
+          </ul>
+        </div> <!-- end contains nav pills -->
+      </header>
+      <div ng-view></div>
+      <div ng-show="homeActive">
+        <ul class="nav nav-pills">
+          <li ng-class="video1Active">
+            <a href="#/demos/video1">Demo1</a>
+          </li>
+          <li ng-class="video2Active">
+            <a href="#/demos/video2">Demo2</a>
+          </li>
+        </ul>
+      </div>
     </div>
-		<div ng-view></div>
-    <div ng-show="homeActive">
-      <ul class="nav nav-pills">
-        <li ng-class="video1Active">
-          <a href="#/demos/video1">Demo1</a>
-        </li>
-        <li ng-class="video2Active">
-          <a href="#/demos/video2">Demo2</a>
-        </li>
-      </ul>
-    </div>
-	</div>
-</body>
+  </body>
 </html>
